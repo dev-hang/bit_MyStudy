@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>slideToggle</title>
+    <!-- jQuery import 방식2 -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("p:eq(0)").click(function(){
+            $("img").slideToggle(2000); //밀리초 단위(default: 400)
+        });
+        //두번째 p태그가 눌리면
+        //두번째 p태그를 사라지게 하고, 세번째 p태그를 나타나게 처리
+        $("p:eq(1)").click(function(){
+            //이벤트 발생객체(this)를 jQuery 객체로 만들어 저장
+            var $this = $(this); 
+            $this.css("background-color", "yellow");
+            
+            //세번째 p태그 나타나고, 두번째 p태그 사라지도록 처리
+            $("#p3").slideDown("slow", function(){
+                $this.slideUp("slow"); 
+            });
+        });
+        
+        //세번째 p태그가 클릭되면
+        //세번째 p태그가 사라지고, 두번째 p태그는 나타나게 처리
+        $("#p3").click(function(){
+            var $this = $(this);
+            $this.css("background-color", "green");
+            
+            //세번째 p태그가 사라지고, 두번째 p태그는 나타나게 처리
+            $this.slideUp("fast", function(){
+                $("#p2").slideDown("fast");
+            });
+        });
+    });
+</script>
+</head>
+<body>
+	<p>첫번째 : 자동차 보이기, 자동차 숨기기</p>
+    <p id="p2">두번째 p태그</p>
+    <p id="p3">세번째 p태그~~~</p>
+    <p>네번째 p태그</p>
+    <hr>
+    <img src="images/car1.jpg" alt="자동차사진">
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JS : function 기타등등</title>
+<script>
+    //var test = "함수선언명과 동일 변수명 사용";
+    //document.write("1. test : " + test, "<br>");
+   
+    //function은 중복선언시(동일이름) 마지막 선언된 함수가 사용됨
+    //함수의 파라미터 개수와 관계없이 이름기준으로 맨마지막 선언 함수 사용됨(자바의 오버로딩 개념이 없음)
+    //(주의) 이미 사용된 변수명과 동일한 명칭은 사용하지 말 것
+    
+    function test() {
+        document.write(">> test() 함수실행", "<br>");
+    }
+    test(); //함수 호출
+    //document.write("2. test : " + test, "<br>");
+    function test() {
+        document.write(">> test() 함수 재정의 실행", "<br>");
+    }
+    
+    function test(param) {
+        document.write("test(param) 함수 param: " + param, "<br>");
+    }
+    test("파라미터!!!");
+    test("param1", "param2");
+    document.write("<hr>");
+    //==================================================
+    
+    //function 사용시 값을 리턴 받을 때 return 키워드 사용
+    //return 되돌려줄 값;
+    function plus(a, b) {
+        return a + b;
+    }
+    let sum = plus(100, 200);
+    document.write("plus(100, 200) 결과값 : " + sum, "<br>");
+    
+    let sum2 = sum + plus(100, 200);
+    document.write("sum + plus(100, 200) 결과값 : " + sum2, "<br>");
+    
+    document.write("<hr>");
+    
+    //==================================================
+    //자동실행 함수 정의 사용
+    //매개변수 없는 경우 : (function(){})();
+    //매개변수 있는 경우 : (function(매개변수){})(매개변수값);
+    (function() {
+        document.write("<p>자동실행 함수 실행문</p>");
+    })();
+    
+    //파라미터(매개변수) 있는 경우
+    (function(name) {
+        document.write("<p>" + name + "님 반갑습니다!!!</p>");
+    })("홍길동");
+    
+    document.write("<hr><hr>");
+    //함수(function)는 변수에 저장해서 사용할 수 있고, 
+    //함수는 매개변수(파라미터) 값으로 전달해서 사용할 수 있다.
+    function call(fnParam, name) {
+        fnParam(name); //전달받은 함수 호출(콜백함수)
+    }
+    
+    //함수를 매개변수에 직접 전달
+    call(function (name) {
+        document.write("<p>" + name + " 반가워~</p>");
+    }, "홍길동");
+    
+    //변수에 함수를 저장
+    let fnName = function (name) {
+        document.write("<p>" + name + " 반가워~</p>");
+    }
+    //변수에 저장된 함수를 매개변수에 전달
+    call(fnName, "김유신");
+    
+    function callName (name) {
+        document.write("<p>" + name + " 반가워~</p>");
+    }
+    //매개변수에 함수를 전달
+    call(callName, "을지문덕");
+    
+    callName("김유신");
+    callName("홍길동");
+    callName("을지문덕");
+    
+    document.write("<h3>자바스크립트 끝</h3>");
+</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SchemaObject class="oracle.dbtools.crest.model.design.relational.SchemaObject" name="MADANG" directorySegmentName="seg_0" id="67765A78-5467-21FC-85E4-26CF8D7EF027">
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-10-31 08:42:44 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+</SchemaObject>

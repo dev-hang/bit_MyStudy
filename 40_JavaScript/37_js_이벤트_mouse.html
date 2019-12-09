@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>마우스 관련 이벤트</title>
+<script>
+    window.onload = function() {
+        var imgbtn = document.getElementById("imgbtn");
+        imgbtn.onmouseover = function() {
+            imgbtn.firstElementChild.src = "images/btn2_yellow.png";
+        };
+        imgbtn.onmouseout = function() {
+            imgbtn.firstElementChild.src = "images/btn2_gray.png";
+        };
+        
+        //------------------------------------------
+        //btn1, btn2에 대하여 이벤트 처리
+        //마우스가 올라오면 노란버튼, 벗어나면 회색버튼
+        var btn1 = document.getElementById("btn1");
+        btn1.onmouseover = function() {
+            btn1.style.backgroundColor = "orange";
+        };
+        btn1.onmouseout = function() {
+            btn1.style.backgroundColor = "lightgray";
+        };
+        
+        var btn2 = document.getElementById("btn2");
+        btn2.onmouseover = function() {
+            btn2.style.backgroundColor = "orange";
+        };
+        btn2.onmouseout = function() {
+            btn2.style.backgroundColor = "lightgray";
+        };
+        //style에 hover적용하면 더 간단
+        
+        //-----------------------------------------
+        //btn1, btn2에 대하여 클릭이벤트 작성
+        //버튼이 클릭되면 버튼명이 클릭되었다고 알림창 띄우기
+        var btn1 = document.getElementById("btn1");
+        btn1.onclick = function() {
+            alert("버튼1 클릭");
+        };
+        var btn2 = document.getElementById("btn2");
+        btn2.onclick = function() {
+            alert("버튼2 클릭");
+        };
+    };
+</script>
+<style>
+    #btn1, #btn2 { background-color: lightgray; border-radius: 5px; 
+                   padding: 10px; font-size: 1.2em;
+                 }
+    #btn2:hover { background-color: yellow; }
+</style>
+</head>
+<body>
+	<button class="btn" id="btn1">버튼1</button>
+    <button class="btn" id="btn2">버튼2</button>
+    <hr>
+    <a href="#" id="imgbtn">
+        <img src="images/btn2_gray.png" alt="버튼">
+    </a>
+    
+</body>
+</html>

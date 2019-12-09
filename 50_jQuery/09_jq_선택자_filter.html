@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>선택자 filter</title>
+    <!-- jQuery import 방식2 -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<style>
+    .red_border { border: 1px solid red; }
+    .five { border-width: 5px; }
+    .ten { border-width: 10px; }
+    
+</style>
+<script>
+    //filter(선택자) : 선택자에 매칭되는 jQuery 객체 집합
+    //end() : 이전 상태로 돌아감(이전 선택 상태)
+    //------------------
+    $(document).ready(function(){
+    /*    
+        $("img").addClass("red_border");
+        $("img").filter("[title *= 'JSP']").addClass("five"); //JSP가 포함되는 것
+        $("img").filter("[title $= 'a']").addClass("five"); //a로 끝나는 것
+        $("img").filter("[title ^= 'Sp']").addClass("ten"); //Sp로 시작하는 것
+        $("img").filter("[title ^= 'Sp']").removeClass("ten");
+        $("img").filter("[title ^= 'Sp']").css("border", "10px solid blue");
+        
+        //jQuery 객체로 저장해서 재사용(권장 - 객체 생성 최소화)
+        $imgs = $("img"); //변수명 앞에 $사용 - jQuery 객체 저장된 변수
+        $imgs.addClass("red_border");
+        $imgs.filter("[title *= 'JSP']").addClass("five");
+        $imgs.filter("[title $= 'a']").addClass("five");
+        $imgs.filter("[title ^= 'Sp']").addClass("ten");
+        
+        $imgs.filter("[title ^= 'Sp']").removeClass("ten");
+        $imgs.filter("[title ^= 'Sp']").css("border", "10px solid blue");
+    */
+        //체이닝 표현방식으로 작성
+        $("img").addClass("red_border")
+            .filter("[title *= 'JSP']").addClass("five")
+            .end() //.end() 이전 선택 상태($("img")가 선택된 상태)로 되돌아감
+            .filter("[title $= 'a']").addClass("five").end()
+            .filter("[title ^= 'Sp']").addClass("ten").end()
+            .filter("[title ^= 'Sp']").removeClass("ten").end()
+            .filter("[title ^= 'Sp']").css("border", "10px solid blue");
+    });
+</script>
+</head>
+<body>
+	<img src="#" title="JSP" alt="JSP">
+	<img src="#" title="Java" alt="Java">
+	<img src="#" title="Spring" alt="Spring">
+</body>
+</html>

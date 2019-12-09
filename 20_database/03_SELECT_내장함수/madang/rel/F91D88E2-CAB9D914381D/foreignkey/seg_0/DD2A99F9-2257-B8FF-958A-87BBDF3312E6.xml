@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="DD2A99F9-2257-B8FF-958A-87BBDF3312E6" containerWithKeyObject="491C95A3-AA15-36C6-EDE8-BBB8A76E26E7" localFKIndex="4939183A-4F6E-DF12-8539-2B2FDE2D1223" name="SYS_C007016">
+<sourceConnName>madang</sourceConnName>
+<sourceObjSchema>MADANG</sourceObjSchema>
+<sourceObjName>SYS_C007016</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-10-31 08:42:44 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<referredTableLongName>MADANG.CUSTOMER</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>AEB0A6B7-6F5C-459D-6765-1308EDDD64DB</referredTableID>
+<keyObject>D4B20C40-B173-6275-F315-FBD217A74C2B</keyObject>
+<referredKeyID>D4B20C40-B173-6275-F315-FBD217A74C2B</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>CUSTID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,134 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="491C95A3-AA15-36C6-EDE8-BBB8A76E26E7" schemaObject="67765A78-5467-21FC-85E4-26CF8D7EF027" name="ORDERS">
+<sourceConnName>madang</sourceConnName>
+<sourceObjSchema>MADANG</sourceObjSchema>
+<sourceObjName>ORDERS</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-10-31 08:42:44 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ORDERID" id="B14BF63A-4E0E-4C75-C6C8-9C0E2BE21133">
+<sourceConnName>madang</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>ORDERID</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-10-31 08:42:44 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,2,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CUSTID" id="1A3E6109-CFC2-FA0D-0962-FB822CCFFCCA">
+<sourceConnName>madang</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>CUSTID</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-10-31 08:42:44 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,2,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DD2A99F9-2257-B8FF-958A-87BBDF3312E6" referredColumn="1B53D719-0CB4-9DAF-F207-AC7A47B00D72"/>
+</associations>
+</Column>
+<Column name="BOOKID" id="740DE6C2-593A-10A7-E8EB-887A842D38F6">
+<sourceConnName>madang</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>BOOKID</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-10-31 08:42:44 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,2,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="37E72D7D-0544-06ED-EA0B-9BF8BF3912E8" referredColumn="8918BC32-74B3-9CD3-61AA-620DA20DD308"/>
+</associations>
+</Column>
+<Column name="SALEPRICE" id="0915ACD5-DDF3-6C06-9A49-F4DAC23AD316">
+<sourceConnName>madang</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>SALEPRICE</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-10-31 08:42:44 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,8,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORDERDATE" id="5262A2B0-CD3D-1ECD-EE92-B8E4E8D76BF1">
+<sourceConnName>madang</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>ORDERDATE</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-10-31 08:42:44 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2BFF8AAC-53FA-7B10-3069-4C7CF986B011" schemaObject="67765A78-5467-21FC-85E4-26CF8D7EF027" name="ORDERS_PK">
+<sourceConnName>madang</sourceConnName>
+<sourceObjSchema>MADANG</sourceObjSchema>
+<sourceObjName>SYS_C007015</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-10-31 08:42:44 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B14BF63A-4E0E-4C75-C6C8-9C0E2BE21133"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4939183A-4F6E-DF12-8539-2B2FDE2D1223" name="SYS_C007016">
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-10-31 08:42:44 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1A3E6109-CFC2-FA0D-0962-FB822CCFFCCA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F692EAB2-0089-F0BE-7E7E-834A35866107" name="SYS_C007017">
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-10-31 08:42:44 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="740DE6C2-593A-10A7-E8EB-887A842D38F6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

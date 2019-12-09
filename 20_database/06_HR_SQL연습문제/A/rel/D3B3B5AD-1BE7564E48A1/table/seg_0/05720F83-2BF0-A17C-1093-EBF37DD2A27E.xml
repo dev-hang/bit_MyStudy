@@ -1,0 +1,350 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="05720F83-2BF0-A17C-1093-EBF37DD2A27E" schemaObject="2F0DDE67-C606-5F81-A156-C687CA3033F6" name="EMPLOYEES">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>EMPLOYEES</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:02 UTC</createdTime>
+<commentInRDBMS><![CDATA[employees table. Contains 107 rows. References with departments,
+jobs, job_history tables. Contains a self reference.]]></commentInRDBMS>
+<ownerDesignName>A</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="EMPLOYEE_ID" id="AEDA1B64-14FE-5FF1-8976-CDD106653B34">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>EMPLOYEES</sourceObjSchema>
+<sourceObjName>EMPLOYEE_ID</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:02 UTC</createdTime>
+<commentInRDBMS><![CDATA[Primary key of employees table.]]></commentInRDBMS>
+<ownerDesignName>A</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,6,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FIRST_NAME" id="26F42124-D982-C828-891F-9DFE2D280A43">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>EMPLOYEES</sourceObjSchema>
+<sourceObjName>FIRST_NAME</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:02 UTC</createdTime>
+<commentInRDBMS><![CDATA[First name of the employee. A not null column.]]></commentInRDBMS>
+<ownerDesignName>A</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LAST_NAME" id="7650D134-0649-91FE-A104-796DAB820407">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>EMPLOYEES</sourceObjSchema>
+<sourceObjName>LAST_NAME</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:02 UTC</createdTime>
+<commentInRDBMS><![CDATA[Last name of the employee. A not null column.]]></commentInRDBMS>
+<ownerDesignName>A</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25 BYTE</dataTypeSize>
+<ownDataTypeParameters>25 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>EMP_LAST_NAME_NN</notNullConstraintName>
+</Column>
+<Column name="EMAIL" id="923731B4-FB05-A1F6-13F6-9566647C8811">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>EMPLOYEES</sourceObjSchema>
+<sourceObjName>EMAIL</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:02 UTC</createdTime>
+<commentInRDBMS><![CDATA[Email id of the employee]]></commentInRDBMS>
+<ownerDesignName>A</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25 BYTE</dataTypeSize>
+<ownDataTypeParameters>25 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>EMP_EMAIL_NN</notNullConstraintName>
+</Column>
+<Column name="PHONE_NUMBER" id="1AAD3B7D-7335-C31F-D360-D11D34165F41">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>EMPLOYEES</sourceObjSchema>
+<sourceObjName>PHONE_NUMBER</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:02 UTC</createdTime>
+<commentInRDBMS><![CDATA[Phone number of the employee; includes country code and area code]]></commentInRDBMS>
+<ownerDesignName>A</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HIRE_DATE" id="05F3579B-6031-1FA2-891D-94F2D5075F4F">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>EMPLOYEES</sourceObjSchema>
+<sourceObjName>HIRE_DATE</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:02 UTC</createdTime>
+<commentInRDBMS><![CDATA[Date when the employee started on this job. A not null column.]]></commentInRDBMS>
+<ownerDesignName>A</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>EMP_HIRE_DATE_NN</notNullConstraintName>
+</Column>
+<Column name="JOB_ID" id="ED635E7C-B557-97FB-30C2-3CA130DB049E">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>EMPLOYEES</sourceObjSchema>
+<sourceObjName>JOB_ID</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:02 UTC</createdTime>
+<commentInRDBMS><![CDATA[Current job of the employee; foreign key to job_id column of the
+jobs table. A not null column.]]></commentInRDBMS>
+<ownerDesignName>A</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>EMP_JOB_NN</notNullConstraintName>
+<associations>
+<colAssociation fkAssociation="FBBFA6DD-F555-B6F8-B11C-43382CDA850D" referredColumn="3271E4ED-C377-BA23-84B3-6CFE408B17FB"/>
+</associations>
+</Column>
+<Column name="SALARY" id="0A9DB49E-AE95-18FC-CB90-A2B596C77D96">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>EMPLOYEES</sourceObjSchema>
+<sourceObjName>SALARY</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:02 UTC</createdTime>
+<commentInRDBMS><![CDATA[Monthly salary of the employee. Must be greater
+than zero (enforced by constraint emp_salary_min)]]></commentInRDBMS>
+<ownerDesignName>A</ownerDesignName>
+<constraintName>EMP_SALARY_MIN</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="salary &gt; 0"/>
+<implementationDef dbType="Oracle Database 11g" definition="salary &gt; 0"/>
+</checkConstraint>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COMMISSION_PCT" id="B360FDD5-8456-3776-C78F-BD7CEAA5FC87">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>EMPLOYEES</sourceObjSchema>
+<sourceObjName>COMMISSION_PCT</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:02 UTC</createdTime>
+<commentInRDBMS><![CDATA[Commission percentage of the employee; Only employees in sales
+department elgible for commission percentage]]></commentInRDBMS>
+<ownerDesignName>A</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,2,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MANAGER_ID" id="4C4B826F-7C25-7D98-0928-51CAD7835D7C">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>EMPLOYEES</sourceObjSchema>
+<sourceObjName>MANAGER_ID</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:02 UTC</createdTime>
+<commentInRDBMS><![CDATA[Manager id of the employee; has same domain as manager_id in
+departments table. Foreign key to employee_id column of employees table.
+(useful for reflexive joins and CONNECT BY query)]]></commentInRDBMS>
+<ownerDesignName>A</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,6,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="71943157-01D7-357D-97B5-5296F422FA2A" referredColumn="AEDA1B64-14FE-5FF1-8976-CDD106653B34"/>
+</associations>
+</Column>
+<Column name="DEPARTMENT_ID" id="70633234-2B14-540D-9834-5DE1AFD3B042">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>EMPLOYEES</sourceObjSchema>
+<sourceObjName>DEPARTMENT_ID</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:02 UTC</createdTime>
+<commentInRDBMS><![CDATA[Department id where employee works; foreign key to department_id
+column of the departments table]]></commentInRDBMS>
+<ownerDesignName>A</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,4,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B84E9B51-0E4A-F923-7B5E-F35A5D14EF4F" referredColumn="762CB33B-EC04-781C-006B-2CB5A6D65DAB"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3E864B43-806A-2F46-2DAF-68E7F010A09C" name="EMP_EMP_ID_PK">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>EMP_EMP_ID_PK</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:03 UTC</createdTime>
+<ownerDesignName>A</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AEDA1B64-14FE-5FF1-8976-CDD106653B34"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9E46FF33-712D-98D1-FDDC-898178AC62BC" name="EMP_EMAIL_UK">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>EMP_EMAIL_UK</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:03 UTC</createdTime>
+<ownerDesignName>A</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="923731B4-FB05-A1F6-13F6-9566647C8811"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C500096D-9AFB-016F-948E-851584206A9E" schemaObject="2F0DDE67-C606-5F81-A156-C687CA3033F6" name="EMP_DEPARTMENT_IX">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>EMP_DEPARTMENT_IX</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:03 UTC</createdTime>
+<ownerDesignName>A</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="70633234-2B14-540D-9834-5DE1AFD3B042"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="11028DBA-E608-79E7-21E2-29C65FCE88B0" schemaObject="2F0DDE67-C606-5F81-A156-C687CA3033F6" name="EMP_EMAIL_UK">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>EMP_EMAIL_UK</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:03 UTC</createdTime>
+<ownerDesignName>A</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="923731B4-FB05-A1F6-13F6-9566647C8811"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B7F73BC6-A6DF-A2ED-8934-2BACEAC176FE" schemaObject="2F0DDE67-C606-5F81-A156-C687CA3033F6" name="EMP_EMP_ID_PK">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>EMP_EMP_ID_PK</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:03 UTC</createdTime>
+<ownerDesignName>A</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AEDA1B64-14FE-5FF1-8976-CDD106653B34"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="09E8DF3B-70DF-3E49-C06B-AE2CD29C139A" schemaObject="2F0DDE67-C606-5F81-A156-C687CA3033F6" name="EMP_JOB_IX">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>EMP_JOB_IX</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:03 UTC</createdTime>
+<ownerDesignName>A</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="ED635E7C-B557-97FB-30C2-3CA130DB049E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6F299F79-A0D5-6E05-944F-F14C6010DEC4" schemaObject="2F0DDE67-C606-5F81-A156-C687CA3033F6" name="EMP_MANAGER_IX">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>EMP_MANAGER_IX</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:03 UTC</createdTime>
+<ownerDesignName>A</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4C4B826F-7C25-7D98-0928-51CAD7835D7C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="97D71FFE-CCE0-173E-C516-717C1BCBE8DE" schemaObject="2F0DDE67-C606-5F81-A156-C687CA3033F6" name="EMP_NAME_IX">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>EMP_NAME_IX</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:03 UTC</createdTime>
+<ownerDesignName>A</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7650D134-0649-91FE-A104-796DAB820407"/>
+<colUsage columnID="26F42124-D982-C828-891F-9DFE2D280A43"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1DFC3D99-1274-9DA4-5FBA-1EA5C7C1C043" name="EMP_DEPT_FK">
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:03 UTC</createdTime>
+<ownerDesignName>A</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="70633234-2B14-540D-9834-5DE1AFD3B042"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BE660AFA-5B67-7149-241E-398B511A9EE2" name="EMP_JOB_FK">
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:03 UTC</createdTime>
+<ownerDesignName>A</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="ED635E7C-B557-97FB-30C2-3CA130DB049E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D01D46F8-268A-7490-ECB8-527E18093769" name="EMP_MANAGER_FK">
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:03 UTC</createdTime>
+<ownerDesignName>A</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4C4B826F-7C25-7D98-0928-51CAD7835D7C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

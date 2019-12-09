@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JS: function:</title>
+<script>
+     //function - 함수, 메소드
+    document.write("<h2>function - 함수, 메소드</h2>");
+    
+    //var변수 호이스팅(hoisting)에 의해 사용가능
+    //단, 변수 선언만 호이스팅됨. 값은 undefined 처리됨
+    document.write("globalVar(선언전) : " + globalVar, "<br>");
+    
+    var globalVar = "전역변수 globalVar";
+    globalStr2 = "전역변수 globalStr2";
+    document.write("globalVar(선언후) : " + globalVar, "<br>");
+    document.write("globalStr2 : " + globalStr2, "<br>");
+    
+    //함수사용(호출) : 함수 선언문 이전에 사용(호출)
+    //함수 호이스팅(hoisting)
+    alertMsg("param test~~");
+    
+    //함수 만들기 function 키워드 사용
+    //function 함수명(매개변수1, 매개변수2, ..., 매개변수n) {}
+    function alertMsg(param1, param2) {
+        document.write("--- alertMsg() 시작 ---", "<br>");
+        document.write("globalVar(function내에서) : " + globalVar, "<br>");
+        
+        //전달받은 파라미터(매개변수) 값 사용 
+        document.write(">> param1 : " + param1, "<br>");
+        document.write(">> param2 : " + param2, "<br>");
+        
+        //function 내에서 변수선언 : 지역변수
+        //      (선언한 함수 내에서만 사용 가능)
+        var localVar = "function 내에서 var 선언한 지역변수";
+        document.write("--> localVar : " + localVar, "<br>");
+        
+        //function 내에서 var 없이 사용한 변수 : 전역변수
+        localNoVar = "function 내에서 var 없이 선언한 변수";
+        document.write("---> localNoVar : " + localNoVar, "<br>");
+        
+        document.write("--- alertMsg() 끝 ---", "<br>");
+    }
+    //함수내 선언된 var 로컬변수는 함수 외부에서는 
+    //오류발생 : not defined
+    //document.write("함수외부--> localVar : " + localVar, "<br>");
+    
+    document.write("함수외부---> localNoVar : " + localNoVar, "<br>");
+    
+    document.write("<hr>");
+    alertMsg("p1", "p2");
+    
+    document.write("<hr>");
+    //매개변수2개 선언 - 3개 값 전달시 3번째값 버려짐
+    alertMsg("p1", "p2", "p3");
+    
+    document.write("<p>JavaScript 끝</p>")
+</script>
+</head>
+<body>
+	
+</body>
+</html>

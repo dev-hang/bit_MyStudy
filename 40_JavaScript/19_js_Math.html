@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JS : Math 내장객체</title>
+<script>
+    /* Math 내장객체
+    Math.PI : 파이값
+    Math.abs(숫자) : 절대값 반환
+    Math.max(숫자1, 숫자2, ..., 숫자n) : 최대값 반환
+    Math.min(숫자1, 숫자2, ..., 숫자n) : 최소값 반환
+    Math.pow(숫자, 제곱값) : 숫자의 거듭제곱 값 반환
+    Math.random() : 0~1 사이의 식수형 난수반환(0:포함, 1:제외)
+    Math.ceil(숫자) : 소수점 첫째자리에서 무조건 올림
+    Math.round(숫자) : 소수점 첫째자리에서 반올림
+    Math.floor(숫자) : 소수점 첫째자리 기준 무조건 내림(소수점 이하 삭제)
+    */
+    document.write("Math.PI : " + Math.PI, "<br>");
+    
+    //상수화된 변수 선언 : const
+    //const 변수명 : 전체 영문대문자 
+    const MATH_PI = 3.141592653589793;
+    document.write("MATH_PI : " + MATH_PI, "<br>");
+    //MATH_PI = 3.14; //const 선언 변수 값은 변경할 수 없음
+    //document.write("MATH_PI : " + MATH_PI, "<br>");
+    
+    //최대값 구하기
+    var maxNum = Math.max(10, 5, 6, 8, 100);
+    document.write("Math.max(10, 5, 6, 8, 100) : " + maxNum, "<br>");
+    
+    //최소값 구하기
+    var minNum = Math.min(10, 5, 6, 8, 100);
+    document.write("Math.min(10, 5, 6, 8, 100) : " + minNum, "<br>");
+    
+    var num = 2.5234;
+    var num2 = 2.0234;
+    
+    //반올림
+    var roundNum = Math.round(num);
+    document.write("num : " + num, "<br>");
+    document.write("Math.round(num) : " + roundNum, "<br>");
+    
+    roundNum = Math.round(num2);
+    document.write("num2 : " + num2, "<br>");
+    document.write("Math.round(num2) : " + roundNum, "<br>");
+    
+    //올림(무조건 올림) - 소수점 이하가 0이 아니면 무조건 올림 처리
+    var ceilNum = Math.ceil(num);
+    document.write("num : " + num, "<br>");
+    document.write("Math.ceil(num) : " + ceilNum, "<br>");
+    
+    ceilNum = Math.ceil(num2);
+    document.write("num2 : " + num2, "<br>");
+    document.write("Math.ceil(2.00001) : " + Math.ceil(2.00001), "<br>");
+    
+    //내림(버림 - 소수점 이하 무조건 버림)
+    floorNum = Math.floor(num);
+    document.write("num : " + num, "<br>");
+    document.write("Math.floor(num) : " + floorNum, "<br>");
+    
+    floorNum = Math.floor(num2);
+    document.write("num2 : " + num2, "<br>");
+    document.write("Math.floor(2.999999) : " + Math.floor(2.999999), "<br>");
+    
+    //n제곱값 구하기
+    var powNum = Math.pow(2, 8);
+    document.write("Math.pow(2, 8) : " + powNum, "<br>");
+    document.write("<hr>");
+    
+    //난수값 생성 : 0~1 사이의 실수 생성(0:포함, 1:제외)
+    var ranNum = Math.random();
+    document.write("Math.random() : " + ranNum, "<br>");
+    document.write("<hr>");
+    
+    for (let i=0; i<100; i++) {
+        ranNum = Math.floor(Math.random() * 10); //0~9까지 난수 생성
+        document.write("Math.floor(Math.random() * 10) : " + ranNum, "<br>");
+    }
+    
+</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+    <!-- jQuery import 방식2 -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    //필터선택자 - 선택자에 콜른(:) 기호를 포함하는 선택자
+    //:contains(문자열) - 문자열을 포함하고 있는 요소
+    //:eq(index) - 인덱스와 같은 요소
+    //:gt(index) - 인덱스보다 큰 요소
+    //:lt(index) - 인덱스보다 작은 요소
+    //------------------------------
+    //$(document).ready();
+    //$().ready();
+    //$();
+    $().ready(function(){
+        $("td:contains('Java')").css("background-color", "yellow");
+        $("td:contains('JSP')") //td중 JSP 문자열이 있으면
+            .css("border", "3px dotted red")
+            .siblings() //형제노드(요소) 선택(기준요소 포함 안함)
+            .css("color", "red")
+            .parent() //부모요소(노드) 선택
+            .css("background-color", "aqua");
+         
+        $("td:contains('Java')") //td 태그중에 'Java'문자열 있는것 
+            .parent() //부모태그를 찾고
+            .find("td:gt(0)") //부모태그의 자녀태그중 td의 2번째 위치부터
+            .css("background-color", "orange");
+        //$("thead th").css("background-color", "gray");
+        //$("thead>tr").find("th:eq(0)").css("background-color","gray");
+        $(".c1").find("th:eq(0)").css("background-color","gray");
+    });
+</script>
+</head>
+<body>
+	<table border>
+        <thead class="c1">
+            <tr>
+                <th>과목</th>
+                <th>상세내용</th>
+                <th>비고(버전)</th>
+            </tr>
+        </thead>
+        <tbody class="c1">
+            <tr>
+                <td>JSP</td>
+                <td>Servlet, EL, JSTL</td>
+                <td>2.3</td>
+            </tr>
+            <tr>
+                <td>Java</td>
+                <td>basic</td>
+                <td>8.0</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

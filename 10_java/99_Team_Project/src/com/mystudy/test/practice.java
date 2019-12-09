@@ -1,0 +1,10 @@
+package com.mystudy.test;
+
+public class practice {
+
+	public static void main(String[] args) {
+		//(concert_num+ ":" + grade +"-"+ num)
+		
+	}
+
+}

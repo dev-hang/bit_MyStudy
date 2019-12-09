@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JQ : each, text, html 메소드</title>
+    <!-- jQuery import 방식2 -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    $(function(){
+        //p태그 전체를 다루기 - each() 메소드 사용 처리
+        $("p").each(function(idx, element){
+            //console.log(">> idx: " + idx + ", element: " + $(element).text());
+            console.log(">> idx: " + idx + ", element: " + $(this).text());
+            
+            //id속성을 설정
+            $(this).prop("id", "param-" + idx);
+        });
+        $("#param-0").css("background-color", "yellow");
+        
+        //text(), html() 메소드 사용 : 데이터 읽기
+        $("#btn1").click(function(){
+            var text = $("#param-1").text();
+            console.log("id가 param-1인 태그의 text: " + text);
+            
+            var html = $("#param-1").html();
+            console.log("id가 param-1인 태그의 html: " + html);
+        });
+        
+        //text(), html() 메소드 사용 : 데이터 쓰기
+        $("#btn2").click(function(){
+            $("#param-2").text("text() : 안녕하세요"); //text 값 설정
+            $("#param-3").html("html() : 안녕하세요"); //html 태그 설정
+            
+            $("#param-4").text("<b>text() : 안녕하세요</b>"); 
+            $("#param-5").html("<b>html() : 안녕하세요</b>"); 
+        });
+    });
+</script>
+<style>
+    /*
+    #param-0 { background-color: yellow; }
+    #param-1 { background-color: green; }
+    */
+</style>
+</head>
+<body>
+	<p>이것은 단락이다</p>
+    <p><strong>첫번째</strong></p>
+    <p>두번째</p>
+    <p>세번째</p>
+    <p>네번째</p>
+    <p>다섯번째</p>
+    <button id="btn1">text(), html() 읽기</button>
+    <button id="btn2">text(), html() 쓰기</button>
+</body>
+</html>

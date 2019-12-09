@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JS 반복문 for</title>
+<script>
+    //반복문: for, while, do-while
+    //for (초기치; 조건식; 증감식;) {}
+    for (let i=1; i<=5; i++) {
+        document.write("i : " + i, "<br>");
+    }
+    document.write("-------------<br>")
+    //var 변수선언 : 전역변수로 사용됨
+    document.write("for문 종료후 i : " + i);
+    
+    document.write("<hr>");
+    for (var i=1; i<=5; i++) {
+        document.write("i : " + i, "<br>");
+    }
+    document.write("-------------<br>")
+    //var 변수선언 : 전역변수로 사용됨
+    document.write("for문 종료후 i : " + i);
+    
+    //let 변수선언 : {} 기준으로 사용범위 정해짐
+    let num1 = 0;
+    //let num1 = 0; //중복선언 오류
+    document.write("<p>let은 중복선언 허용안함</p>");
+    //============================
+    //var 선언 없이 변수 사용 가능(자바와 차이)
+    //단, 명시적으로 var, let 선언 사용 권장
+    for (k = 11; k <= 15; k++) {
+        document.write("k : " + k, "<br>");
+    }
+    document.write("--- for문 종료 후 k: " + k, "<br>");
+    document.write("<hr>");
+    
+    //구구단 3단 브라우저 화면출력(실습)
+    document.write("<h2>구구단 3단 출력</h2>");
+    document.write("<p>출력예: 3 * 1 = 3</p>");
+    let dan = 3;
+    for (let i = 1; i <= 9; i++) {
+        document.write(dan + " * " + i + " = " + (dan*i), "<br>");
+    }
+    document.write("<hr>");
+    
+    //출력할 구구단의 단 값을 화면에서 입력받고 해당 구구단 출력
+    dan = prompt("단 입력 : ");
+    for (i = 1; i <= 9; i++) {
+        document.write(dan + " * " + i + " = " + (dan*i), "<br>");
+    }
+    document.write("<hr>");11 
+    
+    for (i = 2; i <= 9; i++) {
+        for (j = 1; j <= 9; j++){
+            document.write(i + " * " + j + " = " + (i*j), "<br>");
+        }
+        document.write("<br>");
+    }
+    
+</script>
+</head>
+<body>
+	
+</body>
+</html>

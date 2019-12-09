@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="BOOK" directorySegmentName="seg_0" id="4FFA2720-B995-DB82-ACDD-30D8AB32300B">
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-10-31 08:42:44 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<schemaObject>67765A78-5467-21FC-85E4-26CF8D7EF027</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>1D2B6DAE-AF4F-98CB-0610-906787C668C5</segment>
+<tableSpace>E544BCAF-F7F6-FF78-3118-9AF8B430D5E1</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="BOOKNAME" id="0404DF58-A570-6CD5-6DDB-7B7E4AC2C3E5">
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-10-31 08:42:44 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BOOKID" id="8918BC32-74B3-9CD3-61AA-620DA20DD308">
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-10-31 08:42:44 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PUBLISHER" id="B048A724-86F4-0BF8-C074-1790698CE251">
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-10-31 08:42:44 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRICE" id="C5777C95-D936-2212-2685-AF11D1DC8852">
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-10-31 08:42:44 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="BOOK_PK" id="8BA10167-5AD7-D480-3150-0B61F5FEE47A">
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-10-31 08:42:44 UTC</createdTime>
+<ownerDesignName>D</ownerDesignName>
+<schemaObject>67765A78-5467-21FC-85E4-26CF8D7EF027</schemaObject>
+<segment>640139D8-DBCB-389C-91D3-AC188EA6364B</segment>
+<tableSpace>E544BCAF-F7F6-FF78-3118-9AF8B430D5E1</tableSpace>
+<indexSegment>640139D8-DBCB-389C-91D3-AC188EA6364B</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

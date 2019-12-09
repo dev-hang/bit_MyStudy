@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JS : Object</title>
+<script>
+    var str = null;
+    document.write("typeof str : " + typeof str);
+    document.write("<hr>");
+    
+    //object : 객체 사용법
+    //객체 선언 및 사용
+    var tv = new Object();
+    document.write("typeof tv : " + typeof tv);
+    document.write("<hr>");
+    tv.width = 1500; //tv객체에 width 속성 추가하고 값 설정
+    tv.height = 700;
+    tv.color = "black";
+    tv.on = function() {
+        document.write("TV전원 ON!!!", "<br>");
+    };
+    tv.off = function() {
+        document.write("TV전원 OFF~~~", "<br>");
+    };
+    
+    //객체 사용 - 속성, 기능(메소드)
+    //객체의 속성값 사용 : 객체명.속성명
+    document.write("tv.width : " + tv.width, "<br>");
+    document.write("tv.height : " + tv.height, "<br>");
+    document.write("tv.color : " + tv.color, "<br>");
+    tv.on();
+    tv.off();
+    
+    //속성의 유무 확인 : 속성명 in 객체
+    document.write("tv의 color속성 유무 : " + ("color" in tv), "<br>");
+    document.write("tv의 weight속성 유무 : " + ("weight" in tv), "<br>");
+    
+    //속성의 삭제 : delete 객체.속성명
+    delete tv.color;
+    document.write("tv의 color속성 유무(삭제후) : " + ("color" in tv), "<br>");
+    
+    tv.color = "gray";
+    document.write("tv.color : " + tv.color, "<br>");
+    tv.color = "yellow";
+    document.write("tv.color : " + tv.color, "<br>");
+   
+    //객체의 속성값 사용 방법2 : 객체["속성명"]
+    document.write("tv['width'] : " + tv['width'], "<br>");
+    document.write('tv["height"] : ' + tv["height"], "<br>");
+    
+    //tv 속성 확인
+    for (let prop in tv) {
+        document.write("tv속성확인-" + prop + " : " + tv[prop], "<br>");
+    }
+    document.write("<hr>");
+    
+    //==========================
+    //객체선언 및 생성방법2
+    //{속성명 : 값1, 속성명2 : 값2, ... , 속성명n : 값n}
+    var tv2 = {
+        width : 1100, 
+        height : 710,
+        color : "검정",
+        on : function() {
+            document.write("<p>TV전원 켜기~~~</p>");
+        },
+        off : function() {
+            document.write("<p>TV전원 끄기</p>")
+        }
+    };
+    //객체 사용
+    document.write("tv2.width : " + tv2.width, "<br>");
+    document.write("tv2.color : " + tv2.color, "<br>");
+    tv2.on();
+    tv2.off();
+    tv2.color = "무지개색";
+    document.write("tv2.color : " + tv2.color, "<br>");
+    
+    //=====================================
+    //var 키워드 사용(생략) 변수선언시 window객체의 속성으로 저장됨
+    var varTemp = "var 키워드로 변수선언 및 값 생성";
+    document.write("varTemp : " + varTemp, "<br>");
+    document.write("window.varTemp : " + window.varTemp, "<br>");
+    
+</script>
+</head>
+<body>
+	
+</body>
+</html>

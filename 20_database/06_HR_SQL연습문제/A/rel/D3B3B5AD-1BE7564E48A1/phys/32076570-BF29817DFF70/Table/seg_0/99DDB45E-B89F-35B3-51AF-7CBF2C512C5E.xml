@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="REGIONS" directorySegmentName="seg_0" id="99DDB45E-B89F-35B3-51AF-7CBF2C512C5E">
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:02 UTC</createdTime>
+<ownerDesignName>A</ownerDesignName>
+<schemaObject>2F0DDE67-C606-5F81-A156-C687CA3033F6</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>407263B9-3730-AA5F-F888-5033C22577B7</segment>
+<tableSpace>6746E86D-9A2B-8B8A-EEE3-3C745040B8EB</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="REGION_NAME" id="8FFBD98E-2F40-C0A6-9ED4-19793D46AA84">
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:02 UTC</createdTime>
+<ownerDesignName>A</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="REGION_ID" id="C5FE483A-4AC7-94AB-6D53-1B5938DD14C5">
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:02 UTC</createdTime>
+<ownerDesignName>A</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="REG_ID_PK" id="65DB3EF2-B706-DD48-B283-46411955412C">
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:03 UTC</createdTime>
+<ownerDesignName>A</ownerDesignName>
+<schemaObject>2F0DDE67-C606-5F81-A156-C687CA3033F6</schemaObject>
+<segment>5B1C19FE-5EE2-DF20-20C4-A32467665EAD</segment>
+<tableSpace>6746E86D-9A2B-8B8A-EEE3-3C745040B8EB</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="REG_ID_PK" id="A7C11C6C-9F1B-164F-D9B2-927CF5175F57">
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:03 UTC</createdTime>
+<ownerDesignName>A</ownerDesignName>
+<segment>5B1C19FE-5EE2-DF20-20C4-A32467665EAD</segment>
+<tableSpace>6746E86D-9A2B-8B8A-EEE3-3C745040B8EB</tableSpace>
+<existingIndex>65DB3EF2-B706-DD48-B283-46411955412C</existingIndex>
+<indexSegment>5B1C19FE-5EE2-DF20-20C4-A32467665EAD</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

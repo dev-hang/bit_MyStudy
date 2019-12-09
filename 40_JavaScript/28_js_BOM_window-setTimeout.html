@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>window-setTimeout()</title>
+<script>
+    //window.setTimeout() : 정해진 시간에 한 번만 동작
+    //window.setTimeout(액션, 밀리초) : 밀리초 시간 후 액션을 한번만 실행
+    //window.clearTimeout(타이머객체);
+    var i = 0;
+    var timeout = setTimeout("console.log('5초 뒤에 출력 : ' + ++i)", 5*1000);
+    
+</script>
+</head>
+<body>
+	<h3>window.setTimeout() 알아보기</h3>
+    <button onclick="clearTimeout(timeout)">clearTimeout() 정지버튼</button>
+</body>
+</html>

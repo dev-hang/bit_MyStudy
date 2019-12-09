@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+    <!-- jQuery import 방식1 -->
+<!--    <script src="js/jquery-3.4.1.min.js"></script>  -->
+    <!-- jQuery import 방식2(CDN 방식) -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    //JavaScript DOM 객체 다루기
+    window.onload = function() {
+        console.log("window.onload script : " + document.getElementById("id1")); 
+        document.getElementById("id1").style.color = "orange"; 
+    };
+    
+    //========================================================
+    //jQuery 사용방식 3가지 방식(window.onload -> jQuery방식)
+    
+    //방식1 : jQuery(document).ready(function(){});
+    //jQuery --> $ 대체 사용 가능
+    /*
+    jQuery(document).ready(function(){
+        jQuery("#id1").css("background-color", "yellow");
+    });
+    */
+    $(document).ready(function(){
+        $("#id1").css("background-color", "yellow");
+    }); 
+    
+    //---------------------
+    //방식2 : jQuery().ready(function(){});
+    $().ready(function(){
+        //JavaScript 코드로 객체 찾아서 스타일 적용
+        document.getElementById("id1").style.color = "red";
+        
+        //jQuery 사용하여 객체를 찾아 스타일 적용
+        $("#id1").css("color", "blue");
+        $("#id2").css("background-color", "orange");
+        $("#id3").css("background-color", "aqua");
+        
+        $(".cl_h3").css("background-color", "gray");
+        
+    });
+    
+    //----------------------
+    //방식3 : jQuery(function(){});
+    $(function(){
+        $("#id4").css("background-color", "yellow");
+        
+        $("div h3").css("background-color", "orange");
+        
+        $(".cl_p").css("background-color", "yellow");
+        $("div > span > h1").css("background-color", "magenta");
+    });
+</script>
+</head>
+<body>
+	<h1 id="id1">제이쿼리(jQuery) - id1</h1>
+    <h3 id="id2">제이쿼리1 - id2</h3>
+    <h3 id="id3">제이쿼리1 - id3</h3>
+    
+    <h3 class="cl_h3">제이쿼리3 - cl_h3</h3>
+    <h3 class="cl_h3">제이쿼리4 - cl_h3</h3>
+    <hr>
+    
+    <div>
+        <h1>--div안에 h1</h1>
+        <h3 id="id4">--div안에 h3 : id4</h3>
+        <h3>--div안에 h3</h3>
+        <h3>--div안에 h3</h3>
+        <span>
+            <h1>--|--div &gt; span &gt; h1</h1>
+            <p class="cl_p">--|--div &gt; span &gt; p1</p>
+            <p class="cl_p">--|--div &gt; span &gt; p2</p>
+        </span>
+    </div>
+    
+</body>
+</html>

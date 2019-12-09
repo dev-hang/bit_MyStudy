@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JS : Date</title>
+<script>
+    /* 내장객체 Date
+    getFullYear() : 년도 4자리
+    getMonth() : 월(0~11) - 0:1월, 11:12월
+    getDate() : 일
+    getDay() : 요일(0:일, 1:월, ..., 6:토)
+    
+    getHours() : 시간
+    getMinutes() : 분
+    getSeconds() : 초
+    
+    getMilliseconds() : 밀리초 1/1000 초 단위
+    getTime() : 1970년 1월 1일 부터 경과시간(밀리초)
+    --------------------------------------------
+    Date 객체를 생성하는 방법 4가지
+    new Date();
+    new Date(milliseconds);
+    new Date(datestring) : "2019/12/03 10:46:30"
+    new Date(year, month, date, hours, minutes, seconds, milliseconds)
+    */
+    var dt = new Date();
+    document.write("new Date() : " + dt, "<br>");
+    
+    //년월일 구하기 
+    var yyyy = dt.getFullYear();
+    var mm = dt.getMonth() + 1;
+    var dd = dt.getDate();
+    var yyyymmdd = yyyy + "/" + mm + "/" + (dd<10 ? "0"+dd : dd);
+    document.write("년도/월/일 : " + yyyymmdd, "<br>");
+    
+    //시분초 구하기
+    var hh = dt.getHours();
+    var mi = dt.getMinutes();
+    var ss = dt.getSeconds();
+    var hhmiss = hh + ":" + mi + ":" + ss;
+    document.write("시:분:초 - " + hhmiss, "<br>");
+    
+    //---------------------------
+    //초 미만 값 : 밀리초(1/1000 초 단위)
+    var millisec =  dt.getMilliseconds();
+    document.write("dt.getMilliseconds() : " + millisec, "<br>");
+    document.write("<hr>");
+    
+    //===============================
+    //1초 : 1000 밀리초 
+    //1분 : 60초 * 1000 - 1분에 대한 밀리초 값
+    //1시간 : 60분 * (60초 * 1000)
+    //하루 : 24시간 * (60분 * 60초 * 1000)
+    var time = dt.getTime();
+    document.write("dt.getTime() : " + time, "<br>");
+    
+    //1970년 1월 1일부터 지난 날짜 수 구하기
+    //                 초    분   시간   일
+    var days = time / 1000 / 60 / 60 / 24;
+    days = time / 24 / 60 / 60 / 1000;
+    days = time / (24 * 60 * 60 * 1000);
+    days = time / (86400 * 1000);
+    document.write("1970년 1월 1일부터 지난 날짜 수 : " + days, "<br>");
+    document.write("<hr>");
+    
+    //-------------------------
+    /* 날짜값 설정
+    setFullYear() : 년도 4자리
+    setMonth() : 월(0~11) - 12월을 설정하기 위해서는 11 설정
+    setDate() : 일   
+    setDay() : 요일(0:일, 1:월, ..., 6:토)
+    
+    setHours() : 시간
+    setMinutes() : 분
+    setSeconds() : 초
+    
+    setMilliseconds() : 밀리초 1/1000 초 단위
+    setTime() : 밀리초 단위 값으로 설정
+    */
+    var dt1 = new Date();
+    var dt2 = new Date(2020, 0, 3);
+    document.write("new Date() : " + dt1, "<br>");
+    document.write("new Date(2020, 0, 3) : " + dt2, "<br>");
+    
+    //연산처리
+    var diffDate = dt2 - dt1; //밀리초 단위값 연산
+    document.write("날짜연산 결과(밀리초) : " + diffDate, "<br>");
+    
+    //날짜 계산값을 일수로 환산 
+    var durDays = diffDate / (24 * 60 * 60* 1000);
+    document.write("날짜 차이(일수) : " + durDays, "<br>");
+    
+    //날짜 변경
+    dt2.setMonth(1); //2월로 설정
+    dt2.setDate(10); //10일로 설정
+    document.write("dt2 : " + dt2, "<br>");
+</script>
+</head>
+<body>
+	
+</body>
+</html>

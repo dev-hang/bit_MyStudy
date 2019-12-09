@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CSS 배경이미지</title>
+<style>
+    body { 
+        background-image: url("img_back/Desert.jpg")
+    }    
+    #repeat_img {
+        width: 500px; height: 200px;
+        background-color: aqua;
+        background-image: url("img_back/border_small.png")
+    }
+    #no_repeat_img {
+        width: 500px; height: 300px;
+        border: 5px solid black;
+        background-image: url("img_back/cafelatte.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+</style>
+</head>
+<body>
+	<h1>CSS background-image</h1>
+    <div id="repeat_img">이미지 반복</div>
+    <div id="no_repeat_img">이미지 반복 없음</div>
+    
+</body>
+</html>

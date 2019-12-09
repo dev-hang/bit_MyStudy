@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>테이블 동적 생성</title>
+    <!-- jQuery import 방식2 -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    //.val() : value값 일기 설정하기
+    //1. 클릭이벤트 연결
+    //2. input 태그 값 읽어오기
+    //3. 행, 열 값에 따라 table 태그 작성
+    //4. 원하는 위치(#myDiv)에 table 태그 추가 
+    $(document).ready(function(){
+        //1. 클릭이벤트 연결
+        $("#btn").click(function(){
+            //2. input 태그 값 읽어오기
+            //let rowCnt = document.getElementById("row").value;
+            var row = $("#row").val();
+            var col = $("#col").val();
+            
+            //3. 행, 열 값에 따라 table 태그 작성
+            var table = "";
+            var th = "";
+            var td = "";
+            
+            //컬럼의 개수만큼 th 태그 작성
+            th += "<tr>"   
+            for (let i=1; i<=col; i++) {
+                th += "<th>항목" + i + "</th>";
+            }
+            th += "</tr>"
+            
+            //로우의 개수만큼 tr 태그 작성
+            for (let i=1; i<=row; i++) {  
+                td += "<tr>";
+                //컬럼의 개수만큼 td 태그 만들기
+                for (let j=1; j<=col; j++) {
+                    td += "<td>데이터 " + i + "," + j + "</td>";
+                }      
+                td += "</tr>"
+            }   
+           
+            table += "<table>";
+            table += "<thead>" + th + "</thead>";
+            table += "<tbody>" + td + "</tbody>";
+            table += "</table>";
+            
+            //4. 원하는 위치(#myDiv)에 table 태그 추가 
+            $("#myDiv").html(table);
+            
+       }) 
+    });
+    
+/*
+$(document).ready(function(){
+    //1.클릭이벤트 연결
+    $("#btn").click(function(){
+        //2. input 태그 값 읽어오기
+        //let rowCnt = document.getElementById("row").value;
+        let rowCnt = $("#row").val();
+        console.log("rowCnt : " + rowCnt);
+        let colCnt = $("#col").val();
+        
+        //3. 행, 열 값에 따라 table 태그 작성
+        let htmlTag = "<table>";
+        htmlTag += "<thead>";
+        htmlTag += "<tr>";
+        //컬럼의 갯수만큼 th 태그 작성
+        for (let col = 1; col <= colCnt; col++) {
+            htmlTag += "<th>항목" + col + "</th>";
+        }
+        htmlTag += "</tr>";
+        htmlTag += "</thead>"
+        htmlTag += "<tbody>";
+        //로우갯수(rowCnt)만큼 tr 태그 작성
+        for (let row = 1; row <= rowCnt; row++) {
+            htmlTag += "<tr>";
+            //td 태그 만들기(컬럼 갯수만큼 - colCnt)
+            for (let col = 1; col <= colCnt; col++) {
+                htmlTag += "<td>데이터 " + row +","+ col +"</td>";
+            }
+            htmlTag += "</tr>";
+        }
+        htmlTag += "</tbody>";
+        htmlTag += "</table>";
+        
+        //4. 원하는 위치(#myDiv)에 table 태그 추가
+        $("#myDiv").html(htmlTag);
+    });
+}); 
+*/
+    
+</script>
+<style>
+    table { border: 1px solid black; }
+    th, td { border: 1px solid black; }
+    th { background-color: gray; }
+    #myDiv { background-color: yellow; }
+</style>
+</head>
+<body>
+	<h2>테이블 동적 생성</h2>
+    <input type="text" id="row" size="5">행 &nbsp;
+    <input type="text" id="col" size="5">열 &nbsp;
+    <button id="btn">테이블 생성</button>
+    
+    <hr>
+    <div id="myDiv">
+        동적으로 테이블 생성할 영역
+    </div>
+    <hr>
+    <div>
+        <h3>(참고)th제외하고, 2행 3열 테이블</h3>
+        <table border>
+            <thead>
+                <tr>
+                    <th>항목1</th>
+                    <th>항목2</th>
+                    <th>항목3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>데이터 1,1</td>
+                    <td>데이터 1,2</td>
+                    <td>데이터 1,3</td>
+                </tr>
+                <tr>
+                    <td>데이터 2,1</td>
+                    <td>데이터 2,2</td>
+                    <td>데이터 2,3</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>

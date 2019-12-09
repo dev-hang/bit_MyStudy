@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+<script>
+    window.onload = function() {
+        var sum = document.getElementById("sum").value;
+        var sumInt = parseInt(sum);
+        var cb1 = document.getElementById("cb1").value;
+        var cb2 = document.getElementById("cb2").value;
+        var cb3 = document.getElementById("cb3").value;
+    }
+    
+    function compute(cb1) {
+        if (cb1.checked) {
+            sumInt += parseInt(cb1);
+        } else {
+            sumInt -= parseInt(cb1);
+        }
+        sum = sumInt;
+    }
+</script>
+<style>
+    #table {
+        width: 50%;
+    }
+</style>
+</head>
+<body>
+<div>
+    <img src="images/mini.jpg" alt="자동차이미지" width=600px>
+	<table id="table">
+        <thead>
+            <tr>
+                <th>옵 션</th>
+                <th>추 가 가 격</th>
+                <th>선택여부</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>인조가죽시트</td>
+                <td>250000</td>
+                <td>
+                    <input type="checkbox" name="cb1" id="cb1" value="250000" onclick="compute(this)">
+                </td>
+            </tr>
+            <tr>
+                <td>네비게이션</td>
+                <td>300000</td>
+                <td>
+                    <input type="checkbox" name="cb2" id="cb2" value="300000">
+                </td>
+            </tr>
+            <tr>
+                <td>썬루프</td>
+                <td>440000</td>
+                <td>
+                    <input type="checkbox" name="cb3" id="cb3" value="440000">
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>차량금액(옵션포함)</td>
+                <td colspan="2">
+                    <input type="text" name="sum" id="sum" value="20000000">
+                </td>
+            </tr>
+        </tfoot>
+        
+    </table>
+</div>
+</body>
+</html>

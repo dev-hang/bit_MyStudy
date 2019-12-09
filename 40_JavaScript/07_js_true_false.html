@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JS : true, false</title>
+<script>
+    //true, false
+    //false값 : false, 0 또는 -0, undefined, NaN, null, ""(빈문자열)
+    //true값 : false 가 아닌 값 모두
+    document.write('<h3>false값 : false, 0, undefined, NaN, null, ""(빈문자열)</h3>');
+    document.write("false : " + Boolean(false), "<br>");
+    document.write("0 : " + Boolean(0), "<br>");
+    document.write("undefined : " + Boolean(undefined), "<br>");
+    document.write("NaN : " + Boolean(NaN), "<br>");
+    document.write("null : " + Boolean(null), "<br>");
+    document.write('"" : ' + Boolean(""), "<br>");
+    
+    document.write("<h3>위의 false값이 아닌 모든 데이터는 true</h3>");
+    document.write("true : " + Boolean(true), "<br>");
+    document.write("1 : " + Boolean(1), "<br>");
+    document.write("100 : " + Boolean(100), "<br>");
+    document.write('"test" : ' + Boolean("test"), "<br>");
+    
+    document.write("<hr>");
+    var a = 100;
+    if (a = 50) { //a 값 50으로 변경되고 true 처리
+        document.write("결과 true", "<br>");
+        document.write("a : " + a, "<br>");
+    } else {
+        document.write("결과 false", "<br>");
+        document.write("a : " + a, "<br>");
+    }
+    document.write("<hr>");
+    var num = "a";
+    var nan = "a" - 5;
+    document.write('"a" - 5 : ' + nan, "<br>");
+    var result = num - 5 > 10; //NaN > 10 ---> false
+    document.write('"a" - 5 > 10 : ' + result, "<br>");
+    if (result) {
+        document.write("if 구문 결과 true 처리", "<br>");
+    } else {
+        document.write("if 구문 결과 false 처리", "<br>")
+    }
+
+    document.write("<p>=================================</p>");
+    var infinity = 1 / 0;
+    document.write("1/0 의 연산결과 : " + infinity, "<br>");
+    document.write("1 / 0 결과(true/false) : " + Boolean(1 / 0))
+</script>
+</head>
+<body>
+	
+</body>
+</html>

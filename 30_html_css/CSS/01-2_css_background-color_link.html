@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+<style>
+    p { 
+        background-color: black; 
+        color: white;
+        border: 1px solid black;
+    }
+    
+</style>
+</head>
+<body>
+<!-- CSS문법 : 선택자 {속성명: 속성값; 속성명: 속성값; ...}
+    작성위치
+    1. HTML 태그 안(속성) : style="속성명: 속성값; ..."
+    2. <head>태그 안 : 
+        <style>
+            선택자 {속성명: 속성값; 속성명: 속성값; ...}
+        </style>
+    3. 외부파일 링크방식(head 태그 안에 선언)
+        <link rel="stylesheet" type="text/css" href="파일명.css">
+-->
+    <h1>CSS 바탕색 지정 : background-color</h1>
+    <h2>H2태그 : 아무 속성 없음</h2>
+    <h2 class="red">H2태그 : 속성 class="red" 설정</h2>
+    <h2 class="green">H2태그 : 속성 class="greend" 설정</h2>
+    <hr>
+    
+    <h3>배경색 녹색(h3)</h3>
+    <div class="green">
+        녹색바탕 div(class="green")
+    </div>
+    
+    <hr>
+    <p>일반 p태그(id, class 없는)</p>
+    <p>일반 p태그(id, class 없는)</p>
+    <p id="yellow">id 속성을 가진 p태그(id="yellow")</p>
+    <p class="yellow">class 속성을 가진 p태그(class="yellow")</p>
+    
+    <hr>
+    <div>
+        <p>div 안에 있는 p태그1</p>
+        <p class="green">div 안에 있는 p태그2(class="green")</p>
+    </div>
+    
+    <p id="violet" class="red">id, class 속성을 모두 가지는 p태그</p>
+    
+    
+</body>
+</html>

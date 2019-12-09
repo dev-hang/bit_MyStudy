@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="99DDB45E-B89F-35B3-51AF-7CBF2C512C5E" schemaObject="2F0DDE67-C606-5F81-A156-C687CA3033F6" name="REGIONS">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>REGIONS</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:02 UTC</createdTime>
+<ownerDesignName>A</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="REGION_ID" id="C5FE483A-4AC7-94AB-6D53-1B5938DD14C5">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>REGIONS</sourceObjSchema>
+<sourceObjName>REGION_ID</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:02 UTC</createdTime>
+<ownerDesignName>A</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>REGION_ID_NN</notNullConstraintName>
+</Column>
+<Column name="REGION_NAME" id="8FFBD98E-2F40-C0A6-9ED4-19793D46AA84">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>REGIONS</sourceObjSchema>
+<sourceObjName>REGION_NAME</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:02 UTC</createdTime>
+<ownerDesignName>A</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25 BYTE</dataTypeSize>
+<ownDataTypeParameters>25 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A7C11C6C-9F1B-164F-D9B2-927CF5175F57" name="REG_ID_PK">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>REG_ID_PK</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:03 UTC</createdTime>
+<ownerDesignName>A</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C5FE483A-4AC7-94AB-6D53-1B5938DD14C5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="65DB3EF2-B706-DD48-B283-46411955412C" schemaObject="2F0DDE67-C606-5F81-A156-C687CA3033F6" name="REG_ID_PK">
+<sourceConnName>HR</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>REG_ID_PK</sourceObjName>
+<createdBy>bitcamp</createdBy>
+<createdTime>2019-11-07 06:39:03 UTC</createdTime>
+<ownerDesignName>A</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C5FE483A-4AC7-94AB-6D53-1B5938DD14C5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

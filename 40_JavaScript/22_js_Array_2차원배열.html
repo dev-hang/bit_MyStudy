@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JS 2차원배열</title>
+<script>
+    //배열(Array) 2차원 배열
+    //[[], []]
+    var arr = [["홍길동", 27, "서울"], 
+                    ["강감찬", 30, "부산"]];
+    document.write("arr.length : " + arr.length, "<br>");
+    document.write("arr[0].length : " + arr[0].length, "<br>");
+    document.write("arr : " + arr, "<br>");
+    document.write("arr[0] : " + arr[0], "<br>");
+    document.write("arr[0][0] : " + arr[0][0], "<br>");
+    document.write("arr[0][1] : " + arr[0][1], "<br>");
+    document.write("arr[0][2] : " + arr[0][2], "<br>");
+    
+    document.write("arr[1][0] : " + arr[1][0], "<br>");
+    arr[1][0] = "을지문덕";
+    document.write("arr[1][0] : " + arr[1][0], "<br>");   
+    document.write("<hr>");
+    
+    //=======================================
+    //new Array(new Array(), new Array());
+    var arr2 = new Array(
+                    new Array("홍길동2", 27, "서울"),
+                    new Array("강감찬2", 30, "부산")
+                );
+    document.write("arr2.length : " + arr2.length, "<br>");
+    document.write("arr2 : " + arr2, "<br>");
+    document.write("arr2[0].length : " + arr2[0].length, "<br>");
+    document.write("arr2[0][0] : " + arr2[0][0], "<br>");
+    document.write("arr2[0][1] : " + arr2[0][1], "<br>");
+    document.write("arr2[0][2] : " + arr2[0][2], "<br>");
+    
+    document.write("arr2[1][0] : " + arr2[1][0], "<br>");
+    document.write("<hr>");
+    
+    //----------------------------------------
+    //new Array();
+    //[0] = new Array();
+    //[1] = new Array();
+    var arr3 = new Array();
+    arr3[0] = new Array("홍길동3", 27, "서울", "010-1111-1111");
+    arr3[1] = ["강감찬3", 30, "부산"];
+    document.write("arr3.length : " + arr3.length, "<br>");
+    document.write("arr[0].length : " + arr3[0].length, "<br>");
+    
+    document.write("arr3[0][0] : " + arr3[0][0], "<br>");
+    document.write("arr3[0][1] : " + arr3[0][1], "<br>");
+    document.write("arr3[0][2] : " + arr3[0][2], "<br>");
+    document.write("arr3[0][3] : " + arr3[0][3], "<br>");
+    document.write("arr3[0][4] : " + arr3[0][4], "<br>");
+    
+    document.write("arr3[1][0] : " + arr3[1][0], "<br>");
+    document.write("<hr>");
+</script>
+</head>
+<body>
+	
+</body>
+</html>
