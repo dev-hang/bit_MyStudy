@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+    <!-- jQuery import 방식2 -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    
+    $(function(){
+        var timer; //undefined
+        var position = 0;
+        
+        $("#moveCar").click(function(){
+            console.log("> 자동차 이동 버튼 클릭");
+            
+            if (timer != null) return;
+           
+            timer = setInterval(moveImage, 100);
+            
+            
+        });
+        
+        function moveImage(){
+            position += 10;
+            $("#car").css("margin-left", position);
+        }
+        
+        $("#car").click(function(){
+            clearInterval(timer);
+            timer = null;
+        });
+        
+    });
+    
+</script>
+<style>
+/*    #car { margin-left: 200px; }*/
+</style>
+</head>
+<body>
+	<button id="moveCar">자동차 이동</button>
+    <hr>
+    <img id="car" src="images/car.jpg" width="150" alt="자동차이미지">
+</body>
+</html>

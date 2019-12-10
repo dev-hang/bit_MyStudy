@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+    <!-- jQuery import 방식2 -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    //Java, HTML, CSS, JavaScript, jQuery 문자열을 배열에 저장하고 
+    //1초마다 순차적으로 #myDiv 영역에 출력
+    $(document).ready(function(){
+        var subject = ['Java', 'HTML', 'CSS', 'JavaScript', 'jQuery', 'JSP']; 
+        
+        var index = 0;
+        var timer = setInterval(function(){
+            console.log(index + " : " + subject[index]);
+            
+            //div 영역에 출력
+            $("#myDiv").html(subject[index]);
+            
+            index++;
+            
+            //배열값을 반복해서 사용하기 위해 인덱스번호 초기화
+            if (index >= subject.length) {
+                index = 0;
+            }
+        }, 1000);
+            
+        //중지버튼이 클릭되면 과목 보여주기 중지
+        $("#stop").click(function(){
+            console.log(">> timer 동작 정지");
+            clearInterval(timer);
+        });
+    });
+
+    
+</script>
+</head>
+<body>
+	<button id="stop">중지</button>
+    <!-- Java, HTML, CSS, JavaScript, jQuery 과목명을 div영역에 순차적으로 1초마다 보여주기 -->
+    <div id="myDiv">HTML</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+    <!-- jQuery import 방식2 -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    
+    var subject = ['Java', 'HTML', 'CSS', 'JavaScript', 'jQuery', 'JSP']; 
+    var idx = 0;
+    var timer = null;
+    
+    //목록 보여주기 실행
+    function start() {
+        idx = 0;
+        console.log("function start() 실행");
+        //타이머 객체가 없으면 생성
+        if (timer == null) {
+            timer = setInterval(function(){
+            $("#myDiv").html(subject[idx]);
+            idx++;
+            if (idx >= subject.length) {
+                idx = 0;
+                }
+            }, 1000);
+        }
+        
+        console.log("timer : " + timer);
+    };
+    
+    //목록 보여주기 중단
+    function stop() {
+        
+        console.log("function stop() 실행");
+        clearInterval(timer);
+        timer = null;
+        
+    };
+    
+    $(document).ready(function(){
+        console.log(">> JQ document ready 실행~~");
+        $("#start").click(start); //콜백함수에 start함수 연결
+        $("#stop").click(stop);
+    });
+    
+    //자바스크립트로 이벤트 연결
+    window.onload = function(){
+        console.log(">> window.onload 실행~~");
+        var startJS = document.getElementById("startJS");
+        var stopJS = document.getElementById("stopJS");
+        startJS.addEventListener("click", start);
+        stopJS.addEventListener("click", stop);
+    };
+    
+</script>
+</head>
+<body>
+    <button onclick="start()">목록보여주기(HTML이벤트연결)</button>
+	<button onclick="stop()">중지(HTML이벤트)</button>
+    <hr>
+    
+    <button id="start">목록보여주기(JQ 이벤트연결)</button>
+    <button id="stop">중지(JQ 이벤트)</button>
+    <hr>
+    
+    <button id="startJS">목록보여주기(HTML이벤트연결)</button>
+	<button id="stopJS">중지(HTML이벤트)</button>
+    <hr>
+    
+    <div id="myDiv">Java</div>
+    
+</body>
+</html>

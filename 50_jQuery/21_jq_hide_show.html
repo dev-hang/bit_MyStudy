@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+    <!-- jQuery import 방식2 -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    $(function(){
+        $("input[value *= 'hide']").click(function(){
+            $("#box").hide("fast"); 
+        });
+        $("input[value *= 'show']").click(function(){
+            $("#box").show("slow"); 
+        });
+        $("input[value *= 'toggle']").click(function(){
+            $("#box").toggle(3000); 
+        });
+        
+        $("input[value*='slideUp']").click(function(){
+            $("#box").slideUp("fast");
+        });
+        $("input[value*='slideDown']").click(function(){
+            $("#box").slideDown("slow");
+        }); 
+        $("input[value*='slideToggle']").click(function(){
+            $("#box").slideToggle(3000);
+        }); 
+        
+    });
+</script>
+<style>
+    #box { border: 1px solid blue; }
+</style>
+</head>
+<body>
+    <input type="button" value="숨기기(hide)">
+    <input type="button" value="보이기(show)">
+    <input type="button" value="번갈아수행(toggle)">
+    <hr>
+    <input type="button" value="위로숨기기(slideUp)">
+    <input type="button" value="아래로보이기(slideDown)">
+    <input type="button" value="위로숨기기,아래로보이기(slideToggle)">
+	<hr>
+    <div id="box">
+        <img src="images/car1.jpg" alt="자동차이미지">
+    </div>
+</body>
+</html>

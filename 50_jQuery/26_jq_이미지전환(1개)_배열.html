@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>이미지전환</title>
+    <!-- jQuery import 방식2 -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<style>
+    div {
+        width: 320px;
+        margin: 0 auto;
+        position: relative;
+    }
+    div > a {
+        /* 위치설정 */
+        position: absolute;
+        top: 150px; left: 20px;
+        background-color: yellow;
+        
+        /* 모양설정 */
+        width: 50px; height: 40px;
+        border-radius: 25%;
+        
+        /* 텍스트설정 */
+        text-decoration: none;
+        text-align: center;
+        line-height: 40px; /* 세로방향 중앙정렬 */
+    }
+    div > a:last-child {
+        left: 250px;
+    }
+</style>
+<script>
+    //이미지 파일명을 배열에 저장하고 배열에 있는 이미지명 사용 처리
+    //이미지명 저장할 배열객체 변수명
+    //0: bimg01.jpg
+    //1: bimg02.jpg
+    var imgName = new Array(); 
+    
+    for (let i=0; i<10; i++) {
+        if (i < 9) {
+            imgName[i] = "images/bimg0" + (i+1) + ".jpg";
+        } else {
+            imgName[i] = "images/bimg" + (i+1) + ".jpg";
+        }
+    }
+    console.log(imgName);
+    
+    $(function(){
+        
+        var idx = 0;
+        $("#next").click(function(){
+            idx++;
+            if (idx > 9) idx = 0;
+            $("img").prop("src", imgName[idx]); 
+        });
+        
+        $("#prev").click(function(){
+            idx--;
+            if (idx < 0) idx = imgName.length - 1;
+            $("img").prop("src", imgName[idx]); 
+        });
+        
+    });
+</script>
+
+</head>
+<body>
+	<div>
+        <img src="images/bimg01.jpg" alt="상품이미지">
+        <a id="prev" href="#">prev</a>
+        <a id="next" href="#">next</a>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

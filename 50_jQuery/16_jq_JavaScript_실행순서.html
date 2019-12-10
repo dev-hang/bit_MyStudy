@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JavaScript 실행순서</title>
+    <!-- jQuery import 방식2 -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    var order = 1;
+    console.log("순서" + (order++) + " : script 시작하고 첫번째 실행문-" + $("#test").text());
+   
+    $(function(){
+        console.log("순서" + (order++) + " : JQ ready 시작-" + $("#test").text());
+        
+        $("#btn").click(function(){
+            console.log("순서" + (order++) + " : btn click 이벤트 시작-" + $("#test").text()); 
+            call();
+            
+            console.log("순서" + (order++) + " : btn click 이벤트 끝-" + $("#test").text());
+        });
+        
+        console.log("순서" + (order++) + " : JQ ready 끝-" + $("#test").text());
+    });
+    
+    function call(msg){
+        console.log("순서" + (order++) + " : function call 내부-" + $("#test").text());             
+    }
+    call();
+    console.log("순서" + (order++) + " : head script 끝-" + $("#test").text());
+</script>
+</head>
+<body>
+<script>
+    console.log("순서" + (order++) + " : body 시작-" + $("#test").text());
+</script>
+    
+	<h2>스크립트 실행순서 확인</h2>
+    <button id="btn">함수호출</button>
+    <button onclick="call()">function 호출</button>
+    <p id="test">p태그 문장</p>   
+    
+<script>
+    console.log("순서" + (order++) + " : body 끝-" + $("#test").text());
+</script>
+</body>
+</html>
