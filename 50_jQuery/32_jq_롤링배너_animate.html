@@ -52,6 +52,7 @@
             
             clickCnt++;
             console.log("변경후 clickCnt : " + clickCnt);
+            $list.clearQueue();
             $list.animate({"margin-left": -200 * clickCnt + "px"}, 1000);
                 
         });      
