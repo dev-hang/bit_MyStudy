@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>자동차 견적</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<style>
+    #carZone {
+        width: 600px; 
+        margin: auto;
+        border: 1px solid black;
+    }
+    h1 { text-align: center; }
+    #car {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    #car, th, td {
+        border: 1px solid black;
+        text-align: center;
+    }
+    #car thead { background-color: gray; }
+    #totalTxt { background-color: gray; }
+    #total {
+        border: none;
+        text-align: center;
+        font-size: 1.5em;
+        background-color: white;
+    }
+       
+</style>
+
+<script>
+    
+    var initValue;
+    $(function (){
+        
+        initValue = parseInt($("#total").val());
+        //var initValue = Number($("#total").val());
+        
+        //console.log("initValue + 5 : " + (initValue+50000)); //숫자타입으로 변경되었는지 확인
+        
+        $(".opt").change(computeTotal);
+
+    });
+    
+    //function을 따로 선언
+    function computeTotal() {
+        //console.log("이벤트발생opt : " + $(this).prop("name"));
+        var total = initValue; //초기값 - total값은 계속 바뀔 값, initValue는 그대로 있어야 하므로 새로 변수 선언
+        $(".opt:checked").each(function(idx, obj){
+            total += parseInt($(obj).val());
+        });
+        console.log("total : " + total);
+        $("#total").val(total);
+        
+        return total;
+    }
+
+    
+</script>
+
+</head>
+<body>
+<div id="carZone">
+	<h1>자동차 견적</h1>
+    <p><img width=600px src="images/mini.jpg" alt="자동차이미지"></p>
+    <table id="car">
+        <colgroup>
+            <col width="50%">
+            <col width="30%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>옵 션</th>
+                <th>추 가 가 격</th>
+                <th>선택여부</th>
+            </tr>
+        </thead>
+        <tbody> 
+            <tr>
+                <td>인조가죽시트</td>
+                <td>250000</td>
+                <td>
+                    <input type="checkbox" value="250000" id="opt1" class="opt" name="opt1">
+                </td>
+            </tr>
+            <tr>
+                <td>네비게이션</td>
+                <td>300000</td>
+                <td>
+                    <input type="checkbox" value="300000" id="opt2" class="opt" name="opt2">
+                </td>
+            </tr>
+            <tr>
+                <td>썬루프</td>
+                <td>440000</td>
+                <td>
+                    <input type="checkbox" value="440000" id="opt3" class="opt" name="opt3">
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td id="totalTxt">차량금액(옵션포함)</td>
+                <td colspan="2">
+                    <input type="text" value="20000000" id="total" name="total" disabled>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+</body>
+</html>
