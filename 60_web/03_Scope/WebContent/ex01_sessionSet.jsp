@@ -13,9 +13,28 @@
 	String attr_age = (String)session.getAttribute("attr_age");
 	System.out.println(">> session.attr_name : " + attr_name);
 	System.out.println(">> session.attr_age : " + attr_age);
+	
+	//----------------------------
+	//request scope에 데이터 저장
+	request.setAttribute("req_name", name);
+	request.setAttribute("req_age", age);
+	
+	String req_name = (String) request.getAttribute("req_name");
+	String req_age = (String) request.getAttribute("req_age");
 %>
 	<h2>이름(param) : <%=name %></h2>
 	<h2>나이(param) : <%=age %></h2>	
+	
+	<hr>
+	<h2>이름(session attr_name) : <%=attr_name %></h2>
+	<h2>나이(session attr_age) : <%=attr_age %></h2>
+	
+	<hr>
+	<h2>이름(req_name) : <%=req_name %></h2>
+	<h2>나이(req_age) : <%=req_age %></h2>
+	
+ 	
 <%
 	response.sendRedirect("ex01_session.jsp");
 %>
+
