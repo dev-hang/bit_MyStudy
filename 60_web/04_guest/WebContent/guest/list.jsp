@@ -76,7 +76,9 @@
 				<td><%=rs.getString("NAME") %></td>
 				<td><%=rs.getDate("NALJA") %></td>
 				<td><%=rs.getInt("PAY") %></td>
-				<td>선택</td>
+				<td>
+					<a href="detail.jsp?idx=<%=rs.getInt("SABUN") %>">선택</a>
+				</td>
 			</tr>
 <% 
 		}
