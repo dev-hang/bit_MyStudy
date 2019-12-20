@@ -4,9 +4,8 @@ public class InfoVO {
 	private String name;
 	private String age;
 	
-	public InfoVO() {
-		super();
-	}
+	//useBean 액션태그 사용시 반드시 기본생성자 작성할 것
+	public InfoVO() {}
 	
 	public InfoVO(String name, String age) {
 		super();
