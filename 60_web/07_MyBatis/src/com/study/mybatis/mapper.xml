@@ -6,7 +6,7 @@
 	<!-- select 3개의 속성 id, resultType, parameterType
 		id : 사용할 명칭(필수항목), 현재 mapper파일에서 유일한 값
 		resultType : 조회 결과 값을 저장하기 위한 데이터 타입
-			(데이터 하나에 대한 타입 지정)
+			(데이터 하나에 대한 타입 지정 / VO나 DTO 사용하는 것이 편함)
 		parameterType : 전달받은 파라미터 데이터 타입 지정(선택적)
 	 -->
 	<select id="selectAll" resultType="com.study.mybatis.MemberVO">

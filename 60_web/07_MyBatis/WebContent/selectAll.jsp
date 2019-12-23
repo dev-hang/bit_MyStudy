@@ -24,6 +24,7 @@
 	//SqlSession 객체를 얻기(auto commit 상태 아님)
 	SqlSession ss = DBService.getFactory().openSession();
 	
+	//사용하는 매퍼 파일이 여러개일 경우 namespace까지 지정해야 함(ss.selectList("member2.selectAll"))
 	List<MemberVO> memberList = ss.selectList("selectAll");
 	ss.close();
 %>
