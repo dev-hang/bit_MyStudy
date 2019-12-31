@@ -13,30 +13,41 @@
 	Paging p = new Paging();
 
 	//1. 전체 게시물의 수를 구하기
-	p.setTotalRecord(DAO.getTotalCount());
-	p.setTotalPage(); //전체 페이지 개수 구하기
+	p.setTotalRecord(DAO.getTotalCount()); 
+	p.setTotalPage(); //전체 페이지 갯수 구하기
 	
-	System.out.println("> 전체 게시글 수 : " + p.getTotalRecord());
-	System.out.println("> 전체 페이지 수 : " + p.getTotalPage());
+	System.out.println(">전체 게시글 수 : " + p.getTotalRecord());
+	System.out.println(">전체 페이지 수 : " + p.getTotalPage());
 	
 	//2. 현재 페이지 구하기(default : 1)
 	String cPage = request.getParameter("cPage");
-	if (cPage != null) { //넘겨받은 페이지 값이 있으면
+	if (cPage != null) {//넘겨받은 페이지 값이 있으면
 		p.setNowPage(Integer.parseInt(cPage));
 	}
 	
-	//3. 현재 페이지의 시작번호(begin)와 끝번호(end) 구하기
+	//3. 현재페이지의 시작번호(begin)와 끝번호(end) 구하기
 	p.setEnd(p.getNowPage() * p.getNumPerPage());
 	p.setBegin(p.getEnd() - p.getNumPerPage() + 1);
 	
-	System.out.println("---------------");
+	System.out.println("-------------");
 	System.out.println(">>현재 페이지 : " + p.getNowPage());
 	System.out.println(">>시작번호(begin) : " + p.getBegin());
 	System.out.println(">>끝번호(end) : " + p.getEnd());
 	
-%>  
+	//------- 블록(block) 계산하기 ----------
+	//4. 블록의 시작페이지, 끝페이지 구하기(현재페이지 번호 사용)
+	int nowPage = p.getNowPage();
+	int beginPage = (nowPage - 1) / p.getPagePerBlock() * p.getPagePerBlock() + 1;
+	p.setBeginPage(beginPage);
+	p.setEndPage(p.getBeginPage() + p.getPagePerBlock() - 1);
+	
+	//4-1 끝페이지(endPage)가 전체 페이지 수(totalPage) 보다 크면
+	if (p.getEndPage() > p.getTotalPage()) {
+		p.setEndPage(p.getTotalPage());
+	}
+%>
 <%
-	//------------------------------------------------------
+	//-------------------------------------
 	//현재페이지 기준으로 게시글 가져오기
 	Map<String, Integer> map = new HashMap<>();
 	map.put("begin", p.getBegin());
@@ -44,7 +55,7 @@
 	
 	List<BBSVO> list = DAO.getList(map);
 	System.out.println("현재페이지 글목록(list) : " + list);
-%>  
+%>
 <%
 	//EL, JSTL 사용을 위해 scope에 데이터 등록(page 영역)
 	pageContext.setAttribute("list", list);
@@ -56,6 +67,59 @@
 <head>
 <meta charset="UTF-8">
 <title>BBS</title>
+<style>
+	#bbs table {
+		width: 580px;
+		margin-left: 10px;
+		border-collapse: collapse;
+		font-size: 14px;
+	}
+	#bbs table caption {
+		font-size: 20px;
+		font-weight: bold;
+		margin-bottom: 10px;
+	}
+	#bbs table th, td {
+		text-align: center;
+		border: 1px solid black;
+		padding: 4px 10px;
+	}
+	.title { background-color: lightsteelblue; }
+	.no { width: 15%; }
+	.writer { width: 15%; }
+	.regdate { width: 20%; }
+	.hit { width: 15%; }
+	
+	/***** 페이지 표시 부분 스타일(시작) ****/
+	.paging { list-style: none; }
+	.paging li {
+		float: left;
+		margin-right: 8px;
+	}
+	.paging li a {
+		text-decoration: none;
+		display: block;
+		padding: 3px 7px;
+		border: 1px solid #00B3DC;
+		font-weight: bold;
+		color: black;
+	}
+	.paging .disable {
+		border: 1px solid silver;
+		padding: 3px 7px;
+		color: silver;
+	}
+	.paging .now {
+		border: 1px solid #ff4aa5;
+		padding: 3px 7px;
+		background-color: #ff4aa5;
+	}
+	.paging li a:hover {
+		background-color: #00B3DC;
+		color: white;
+	}
+	/***** 페이지 표시 부분 스타일(끝) ****/
+</style>
 </head>
 <body>
 
@@ -63,16 +127,17 @@
 <table>
 	<caption>게시글 목록</caption>
 	<thead>
-		<tr>
-			<th>번호</th>
-			<th>제목</th>
-			<th>글쓴이</th>
-			<th>날짜</th>
-			<th>조회수</th>
+		<tr class="title">
+			<th class="no">번호</th>
+			<th class="subject">제목</th>
+			<th class="writer">글쓴이</th>
+			<th class="regdate">날짜</th>
+			<th class="hit">조회수</th>
 		</tr>
 	</thead>
+	
 	<tbody>
-	<c:choose>
+		<c:choose>
 		<c:when test="${empty list }">
 			<tr>
 				<td colspan="5">
@@ -85,32 +150,73 @@
 				<tr>
 					<td>${vo.b_idx }</td>
 					<td>
-						<a href="view.jsp?b_idx=${vo.b_idx }&cPage=${pvo.nowPage }">
+						<a href="view-0.jsp?b_idx=${vo.b_idx}&cPage=${pvo.nowPage}">
 							${vo.subject }
 						</a>
 					</td>
 					<td>${vo.writer }</td>
-					<td>${vo.write_date }</td>
+					<td>${vo.write_date.substring(0, 10) }</td>
 					<td>${vo.hit }</td>
 				</tr>
-			</c:forEach>	
+			</c:forEach>
 		</c:otherwise>
-	</c:choose>
+		</c:choose>
 	</tbody>
+	
 	<tfoot>
 		<tr>
-			<td>
-				<a href="list.jsp?cPage=1">1</a>
-				<a href="list.jsp?cPage=2">2</a>
-				<a href="list.jsp?cPage=3">3</a>
+			<td colspan="4">
+				<ol class="paging">
+				<%--[이전으로]에 대한 사용여부 처리 --%>
+				<c:choose>
+					<%--사용불가(disable) : 첫번째 블록인 경우 --%>
+					<c:when test="${pvo.beginPage == 1}">
+						<li class="disable">이전으로</li>
+					</c:when>
+					<c:otherwise>
+						<li>
+							<a href="list.jsp?cPage=${pvo.beginPage - 1}">이전으로</a>
+						</li>
+					</c:otherwise>
+				</c:choose>
 				
-				<a href="list.jsp?cPage=4">4</a>
+				<%-- 블록내에 표시할 페이지 표시(시작페이지~끝페이지) --%>
+				<c:forEach var="k" begin="${pvo.beginPage }" end="${pvo.endPage }">
+				<c:choose>
+					<c:when test="${k == pvo.nowPage}">
+						<li class="now">${k }</li>
+					</c:when>
+					<c:otherwise>
+						<li>
+							<a href="list.jsp?cPage=${k}">${k}</a>
+						</li> 
+					</c:otherwise>
+				</c:choose>
+				</c:forEach>
+				
+				<%--[다음으로]에 대한 사용여부 처리 --%>
+				<c:choose>
+					<%--사용불가(disable) : 
+						endPage가 전체페이지 수보다  크거나 같으면 --%>
+					<c:when test="${pvo.endPage >= pvo.totalPage }">
+						<li class="disable">다음으로</li>
+					</c:when>
+					<c:otherwise>
+						<li><a href="list.jsp?cPage=${pvo.endPage + 1}">다음으로</a></li>
+					</c:otherwise>
+				</c:choose>
+				</ol>	
+			</td>
+			<td>
+				<input type="button" value="글쓰기"
+					onclick="javascript:location.href='write.jsp'">
 			</td>
 		</tr>
+		
 	</tfoot>
-	
 </table>
-</div>
 
+</div>
+	
 </body>
 </html>
