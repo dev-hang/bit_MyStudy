@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!--  configuration : configuration의 설정 -->
+<!-- dataSource type="POOLED" - 커넥션객체 풀을 미리 만들어두고 쓰는 것,
+	 UNPOOLED는 그때 그때 커넥션 객체를 만들어서 쓰는 것 -->
+	 <!-- typeAliases 타입에 대한 별칭 설정 가능 -->
+	<typeAliases>
+		<typeAlias type="com.bc.model.vo.GuestbookVO" alias="guestbookVO"/>
+	</typeAliases>
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="oracle.jdbc.OracleDriver"/>
+        <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+        <property name="username" value="mystudy"/>
+        <property name="password" value="mystudypw"/>
+      </dataSource>
+    </environment>
+  </environments>
+  <!-- SQL 작성파일인 매퍼 파일 위치 지정 -->
+  <mappers>
+  <!-- 매퍼들 위치를 작성하는 곳인듯? mappers니까 -->
+  
+   <mapper resource="com/bc/mybatis/mapper.xml"/>
+   
+  </mappers>
+</configuration>
+
+
+
+
+
+
+
+
+
+
+
+

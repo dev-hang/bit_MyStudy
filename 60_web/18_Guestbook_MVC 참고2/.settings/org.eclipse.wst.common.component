@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="18_Guestbook_MVC 참고2">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/18_Guestbook_MVC/src"/>
+        <property name="context-root" value="18_Guestbook_MVC_참고2"/>
+        <property name="java-output-path" value="/18_Guestbook_MVC 참고2/18_Guestbook_MVC/build/classes"/>
+    </wb-module>
+</project-modules>

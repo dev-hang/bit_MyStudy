@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="guestbook">
+
+	<select id="all" resultType="com.bc.model.vo.GuestbookVO">
+		SELECT IDX, NAME, SUBJECT, CONTENT, EMAIL, PWD, REGDATE 
+		FROM GUESTBOOK
+		ORDER BY IDX
+	</select> 
+	
+	<select id="one" parameterType="string"
+			resultType="guestbookVO">
+		SELECT IDX, NAME, SUBJECT, CONTENT, EMAIL, PWD, REGDATE 
+		FROM GUESTBOOK
+		WHERE IDX = #{idx}
+	</select>
+<!-- 
+	<insert id="insert" parameterType="com.bc.mybatis.GuestbookVO">
+		INSERT INTO GUESTBOOK
+            (IDX, NAME, SUBJECT, CONTENT, EMAIL, PWD)
+ 		VALUES (GUESTBOOK_SEQ.NEXTVAL, #{name}, #{subject}, 
+ 							#{content}, #{email}, #{pwd})
+	</insert>
+ -->
+ 	<insert id="insert" parameterType="com.bc.model.vo.GuestbookVO">
+ 		INSERT INTO GUESTBOOK
+            	(IDX, NAME, SUBJECT, CONTENT, EMAIL, PWD, REGDATE)
+ 		VALUES (GUESTBOOK_SEQ.NEXTVAL, #{name}, #{subject},
+ 						 #{content}, #{email}, #{pwd}, SYSDATE)
+ 	</insert>
+<!-- 	
+ 	<update id="update" parameterType="guestbookVO">
+ 		UPDATE GUESTBOOK 
+   			SET NAME = #{name}, SUBJECT = #{subject},
+   				 CONTENT = #{content}, EMAIL = #{email},
+   				  REGDATE = SYSDATE
+ 		 WHERE IDX = #{idx}
+ 	</update>
+ -->
+ 	<update id="update" parameterType="guestbookVO">
+ 		  UPDATE GUESTBOOK
+ 		     SET NAME = #{name},
+ 		     	 SUBJECT = #{subject},
+ 		     	 EMAIL = #{email},
+ 		     	 CONTENT = #{content},
+ 		     	 REGDATE = SYSDATE
+ 		  WHERE IDX = #{idx}
+ 	</update> 	
+<!--  	
+ 	<delete id="delete" parameterType="string">
+ 		DELETE FROM GUESTBOOK
+ 		 WHERE IDX = #{idx}
+ 	</delete>
+-->
+	<delete id="delete" parameterType="guestbookVO">
+		DELETE FROM GUESTBOOK
+		 WHERE IDX = #{idx}
+	</delete>
+</mapper>
+
+<!-- <mapper namespace="member2"> -> mapper파일의 id역할 유니크 해야함 -->
+<!-- SQL문장에 세미콜론 쓰지 말것 -->
+<!-- resultType : 이전에 ResultSet으로 받았던 데이터를 받을 타입을 지정해줘야함
+					(ResultSet은 전체를 받아서 rs.next()를 썼지만
+					 여기는 어떻게 받을지를 지정이 가능하다.
+					 selectList -> List로 전체데이터 줌, 
+					 selectOne -> 데이터 하나를 resultType에 지정된 타입으로를 줌)
+				  com.study.mybatis.MemberVO -->
+<!-- parameterType : 값 전달시 필요 -->
+<!-- select 3개의 속성 id, resultType, parameterType
+		id : 사용할 명칭(필수항목), 현재 mapper파일에서 유일한 값
+		resultType : 조회 결과 값을 저장하기 위한 데이터 타입
+		 			 (데이터 하나에 대한 타입 지정)
+		parameterType : 전달받은 파라미터 데이터 타입 지정(선택적)
+		 				(jdbc에서는 ? - mybatis에서는 #{} 에 들어가는 것)
+-->
+	
+<!-- parameterType="String" : ""안에 는 대소문자 구분안함
+							  java.lang부터 시작해서 써줄 수 도 있다???
+-->
+	
+<!-- #{id}: VO객체를 넣어줄 때 ,
+			{}안에 들어가는 이름은 VO에 있는 변수 이름(필드명)하고 같아야함 
+-->
+	
+<!-- mapper.xml 내의 문장이 틀린게 있으면 실행이 안된다 -> insert문에 > <-이거 하나 더 들어갔다고 실행 안되었음
+	 바인드 변수가 1개인 경우 파라미터 타입 생략가능 & 바인드 변수명 자유롭게 사용가능
+-->
+
+
+
+
+
+
+
+
+
