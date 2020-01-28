@@ -1,0 +1,15 @@
+package polymorphism03;
+
+public class AppleSpeaker implements Speaker {
+
+	@Override
+	public void volumeUp() {
+		System.out.println(">> SonySpeaker - 소리크게");
+	}
+
+	@Override
+	public void volumeDown() {
+		System.out.println(">> SonySpeaker - 소리작게");
+	}
+
+}

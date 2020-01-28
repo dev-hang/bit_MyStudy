@@ -1,0 +1,6 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Jan 23 15:37:50 KST 2020
+http\://repo.spring.io/plugins-release/.error=Could not transfer artifact com.oracle\:ojdbc6\:jar\:sources\:11.2.0.3 from/to oracle (http\://repo.spring.io/plugins-release)\: Access denied to http\://repo.spring.io/plugins-release/com/oracle/ojdbc6/11.2.0.3/ojdbc6-11.2.0.3-sources.jar. Error code 403, Forbidden
+@default-oracle-http\://repo.spring.io/plugins-release/.lastUpdated=1579761469497
+https\://repo.maven.apache.org/maven2/.lastUpdated=1579761470097
+https\://repo.maven.apache.org/maven2/.error=

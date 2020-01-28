@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="00_Spring_MVC_example"/>
+<aop-project name="05_Spring_DI_annotation"/>
+<aop-project name="06_Spring_DI_annotation_XML"/>
+<aop-project name="07_BoardService"/>
+</aop-reference-model>

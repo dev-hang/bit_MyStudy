@@ -1,0 +1,14 @@
+package com.spring.biz.board;
+
+public class BoardServiceClient {
+
+	public static void main(String[] args) {
+		//1. 스프링컨테이너 구동
+		
+		
+		//2. 스프링컨테이너에 생성된 객체 요청 및 사용
+		
+		//3. 컨테이너 종료(close)
+	}
+
+}

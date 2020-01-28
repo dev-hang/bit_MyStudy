@@ -1,0 +1,15 @@
+INDEX VERSION 1.130
+C:\MyStudy\70_Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1623631273.index
+\03_Spring_DI\src\main\java
+C:\MyStudy\70_Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1780915036.index
+\04_Spring_DI_Collection\src\main\java
+C:\MyStudy\70_Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1348014711.index
+\05_Spring_DI_annotation\src\main\java
+C:\MyStudy\70_Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1079778191.index
+\07_BoardService\src\main\java
+C:\MyStudy\70_Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2867191986.index
+\06_Spring_DI_annotation_XML\src\main\java
+C:\MyStudy\70_Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1724428059.index
+\00_Spring_MVC_example\src\main\java
+C:\MyStudy\70_Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2736205198.index
+\02_Spring_basic\src\main\java

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!--  
+	<bean id="tv1Samsung" class="polymorphism01.SamsungTV" />
+	-->
+	<!-- === 생성자를 이용한 의존성 주입(DI) -->
+	<!--  
+	<bean id="tv2Samsung" class="polymorphism02.SamsungTV">
+		<constructor-arg ref="sony"></constructor-arg>
+		<constructor-arg value="1000000"></constructor-arg>
+	</bean>
+	-->
+	
+	<bean id="sony" class="polymorphism02.SonySpeaker" />
+	
+	<bean id="tv2Samsung" class="polymorphism02.SamsungTV">
+		<constructor-arg ref="sony"></constructor-arg>
+		<constructor-arg value="1000000"></constructor-arg>
+	</bean>
+</beans>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="collectionBean" class="di_collection.CollectionBean">
+		<!-- List 타입에 대한 설정(의존주입 DI) -->
+		<property name="addressList">
+			<list>
+				<value>서울시 강남구 역삼동</value>
+				<value>서울시 강남구 서초동</value>
+				<value>서울시 강남구 서초동</value>
+				<value>10</value>
+			</list>
+		</property>
+		
+		<!-- Set 타입에 대한 설정(중복값 허용 안함) -->
+		<property name="addressSet">
+			<set value-type="java.lang.String">
+				<value>서울시 강남구 역삼동</value>
+				<value>서울시 강남구 서초동</value>
+				<value>서울시 강남구 서초동</value>
+				<value>123</value>
+			</set>
+		</property>
+	</bean>
+</beans>

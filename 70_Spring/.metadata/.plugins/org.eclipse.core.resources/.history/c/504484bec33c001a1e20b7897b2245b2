@@ -1,0 +1,36 @@
+package polymorphism02;
+
+public class LgTV implements TV {
+	public void on() {
+		
+	}
+	public void off() {
+		System.out.println("LgTV - 전원 OFF");
+	}
+	public void soundUp() {
+		System.out.println("LgTV - 소리크게~~");
+	}
+	public void soundDown() {
+		System.out.println("LgTV - 소리작게~~");
+	}
+	@Override
+	public void powerOn() {
+		System.out.println("LgTV - 전원 ON");
+		
+	}
+	@Override
+	public void powerOff() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void volumeUp() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void volumeDown() {
+		// TODO Auto-generated method stub
+		
+	}
+}

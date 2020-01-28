@@ -1,0 +1,8 @@
+package di_collection;
+
+import java.awt.List;
+
+public class CollectionBean {
+	private List<String> addressList;
+	
+}

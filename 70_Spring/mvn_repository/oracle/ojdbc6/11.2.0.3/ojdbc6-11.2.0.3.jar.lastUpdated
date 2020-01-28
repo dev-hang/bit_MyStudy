@@ -1,0 +1,6 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Jan 23 16:46:36 KST 2020
+@default-oracle-http\://www.datanucleus.org/downloads/maven2/.lastUpdated=1579765595650
+https\://repo.maven.apache.org/maven2/.lastUpdated=1579765596440
+http\://www.datanucleus.org/downloads/maven2/.error=Could not transfer artifact oracle\:ojdbc6\:jar\:11.2.0.3 from/to oracle (http\://www.datanucleus.org/downloads/maven2)\: C\:\\MyStudy\\70_Spring\\mvn_repository\\oracle\\ojdbc6\\11.2.0.3\\aether-51e1f2eb-04a2-4207-93d3-406713dd2fa4-ojdbc6-11.2.0.3.jar-in-progress (\uC9C0\uC815\uB41C \uD30C\uC77C\uC744 \uCC3E\uC744 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4)
+https\://repo.maven.apache.org/maven2/.error=

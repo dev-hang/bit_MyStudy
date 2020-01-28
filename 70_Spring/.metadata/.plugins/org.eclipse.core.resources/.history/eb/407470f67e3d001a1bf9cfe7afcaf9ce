@@ -1,0 +1,11 @@
+package di_collection;
+
+public class CollectionBeanClient {
+	public static void main(String[] args) {
+		//1. 스프링 컨테이너 구동
+		
+		//2. 스프링 컨테이너에 생성한 객체 요청(Lookup)
+		
+		//3. 컨테이너 종료(close)
+	}
+}

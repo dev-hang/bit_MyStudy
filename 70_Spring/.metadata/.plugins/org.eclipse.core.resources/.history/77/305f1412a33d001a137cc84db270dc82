@@ -1,0 +1,15 @@
+package com.spring.biz.board;
+CREATE TABLE USERS (
+		ID VARCHAR2(8) PRIMARY KEY,
+		PASSWORD VARCHAR2(8),
+		NAME VARCHAR2(20),
+		ROLE VARCHAR2(5)
+	);
+public class BoardVO {
+	private int seq;
+	private String title;
+	private String title;
+	private String title;
+	private Date regdate;
+	private int cnt;
+}

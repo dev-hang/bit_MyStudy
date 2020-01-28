@@ -1,0 +1,10 @@
+package polymorphism01;
+
+public class TVUser {
+
+	public static void main(String[] args) {
+		System.out.println("---- 컨테이너 구동전 ----");
+		//1. 스프링 컨테이너 구동(스프링 설정파일 읽어서)
+	}
+
+}
